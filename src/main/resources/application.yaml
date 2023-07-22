@@ -1,0 +1,6 @@
+spring :
+  server:
+    port: 8008
+
+  profiles:
+    active: development
