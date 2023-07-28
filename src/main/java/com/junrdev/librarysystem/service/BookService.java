@@ -22,6 +22,9 @@ public class BookService {
         this.bookRepo = bookRepo;
     }
 
+    public Book getBookById(String id){
+        return bookRepo.findById(id).isEmpty() ? null : bookRepo.findById(id).get();
+    }
 
     public List<Book> getAllBooks() {
         return bookRepo.findAll();
@@ -35,6 +38,8 @@ public class BookService {
                 .author(dto.getAuthor())
                 .NoOfPages(dto.getNoOfPages())
                 .ISBN_Number(dto.getIsbn())
+                .category(dto.getCategory())
+                .url_to_cover_photo(dto.getCoverPhoto())
                 .build();
 
         Book _b = bookRepo.save(book);
