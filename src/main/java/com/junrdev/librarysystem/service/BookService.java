@@ -62,4 +62,7 @@ public class BookService {
         return bookRepo.findBookByTitle(title);
     }
 
+    public List<Book> getAuthorBooks(String author){
+        return bookRepo.findBooksByAuthor(author);
+    }
 }

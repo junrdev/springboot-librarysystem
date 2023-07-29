@@ -8,12 +8,14 @@ import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.query.Param;
 import org.springframework.stereotype.Repository;
 
+import java.util.List;
+
 @Repository
 public interface BookRepo extends JpaRepository<Book, String> {
 
     Book findBookByTitle(String title);
 
-    Book findBookByAuthor(String Author);
+    List<Book> findBooksByAuthor(String Author);
 
     Book findBookByCategory(String Category);
 
