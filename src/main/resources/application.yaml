@@ -1,6 +1,17 @@
-spring :
-  server:
+server:
     port: 8008
 
+spring:
   profiles:
-    active: development
+    active: local
+
+    datasource:
+      url:
+      username:
+      password:
+
+      # JPA is a Spring property not a spring.datasource property i keep leaving that out
+    jpa:
+      database-platform: org.hibernate.dialect.MySQLDialect
+      hibernate:
+        ddl-auto: update
